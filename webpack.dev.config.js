@@ -9,7 +9,7 @@ module.exports = {
         host: 'localhost',
         port: 4200,
         hot: true,
-        static: path.resolve(__dirname, './RS-selectors/dist'),
+        static: path.resolve(__dirname, './dist'),
         historyApiFallback: true,
     },
 };

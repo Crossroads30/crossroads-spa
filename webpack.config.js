@@ -6,17 +6,17 @@ const { merge } = require('webpack-merge');
 
 const baseConfig = {
     entry: {
-        index: './RS-selectors/src/index.js',
+        index: './src/index.js',
     },
     output: {
         filename: '[name].js',
         chunkFilename: '[name].js',
-        path: path.resolve(__dirname, './RS-selectors/dist'),
+        path: path.resolve(__dirname, './dist'),
         publicPath: '/',
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './RS-selectors/src/index.html',
+            template: './src/index.html',
             filename: 'index.html',
         }),
         new CleanWebpackPlugin(),
