@@ -1,14 +1,19 @@
 import '../style.css';
+import FooterView from '../view/footer/footer-view';
 import HeaderView from '../view/header/header-view';
+import MainView from '../view/main/main-view';
 
-export default class AppView {
+
+export default class App {
     constructor() {
         this.createView();
     }
 
     createView() {
-        const header = new HeaderView();
+        const main = new MainView();
+        const header = new HeaderView(main);
+        const footer = new FooterView();
 
-        document.body.append(header.getHtmlElement(header.configureViwe()));
+        document.body.append(header.getHtmlElement(), main.getHtmlElement(), footer.getHtmlElement());
     }
 }
