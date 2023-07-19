@@ -1,5 +1,5 @@
-import View from '../../view';
 import './link.css';
+import View from '../../view';
 
 const CssClasses = {
     ITEM: 'nav-item',
@@ -22,6 +22,7 @@ export default class LinkView extends View {
         super(params);
 
         this.linkElements = linkElements;
+
         this.configureView(pageParam);
     }
 
