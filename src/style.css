@@ -479,13 +479,44 @@ p {
     padding: 0.2em 0;
 }
 
+/* unbounded-regular - cyrillic_latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Unbounded';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/unbounded/unbounded-v6-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* unbounded-600 - cyrillic_latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Unbounded';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./fonts/unbounded/unbounded-v6-cyrillic_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* geologica-regular - cyrillic_latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Geologica';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/geologica/geologica-v1-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* geologica-600 - cyrillic_latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Geologica';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./fonts/geologica/geologica-v1-cyrillic_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 /*--- content start ---*/
 
 body {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100vh;
-
     margin: 0 auto;
+    white-space: pre-line;
 }
