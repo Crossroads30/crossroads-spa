@@ -1,0 +1,31 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    /* height: 100vh; */
+    width: 100%;
+    padding: 60px;
+
+    background-image: url(../../../data/unsplash_j642UlFMekY.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.text {
+    display: block;
+    width: 40%;
+
+    color: #02f98e;
+    font-family: 'Unbounded';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 5px;
+    line-height: 18px;
+
+}
+
+.text:not(:last-child) {
+    margin-bottom: 70px;
+}
