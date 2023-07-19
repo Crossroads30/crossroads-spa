@@ -1,0 +1,10 @@
+.nav-item {
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+}
+
+.nav-item__selected {
+color: #DB3939;}
