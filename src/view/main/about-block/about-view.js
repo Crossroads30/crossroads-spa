@@ -1,7 +1,6 @@
 import './about.css';
 import View from '../../view';
 import ElementCreator from '../../../util/element-creator';
-// import InputFieldCreator from '../../../util/input-field/input-field-creator';
 
 const CssClasses = {
     ABOUT: 'about',
