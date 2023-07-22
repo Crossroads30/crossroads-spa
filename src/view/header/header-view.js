@@ -4,6 +4,7 @@ import VideoView from '../main/videos-block/videos-view';
 import ElementCreator from '../../util/element-creator';
 import LinkView from './link-view/link-view';
 import AboutView from '../main/about-block/about-view';
+import Songs from '../main/songs-block/songs-view';
 
 const CssClasses = {
     HEADER: 'header',
@@ -94,6 +95,7 @@ export default class HeaderView extends View {
     getPages(mainComponent) {
         const aboutView = new AboutView();
         const videoView = new VideoView();
+        const songViwe = new Songs();
 
         const pages = [
             {
@@ -106,6 +108,7 @@ export default class HeaderView extends View {
             },
             {
                 name: NamePages.SONGS,
+                callback: () => mainComponent.setContent(songViwe),
             },
             {
                 name: NamePages.ALBUMS,
