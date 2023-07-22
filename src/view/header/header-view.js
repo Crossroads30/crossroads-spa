@@ -1,12 +1,14 @@
 import './header.css';
 import View from '../view';
+import VideoView from '../main/videos-block/videos-view';
 import ElementCreator from '../../util/element-creator';
 import LinkView from './link-view/link-view';
+import AboutView from '../main/about-block/about-view';
 
 const CssClasses = {
     HEADER: 'header',
-    TITLE: 'header-title',
     NAV: 'nav',
+    TITLE: 'title',
 };
 
 const NamePages = {
@@ -16,70 +18,103 @@ const NamePages = {
     ALBUMS: 'альбомы',
     NEWS: 'новости',
 };
-
 const START_PAGE_INDEX = 0;
 
 /**
  * @typedef {{ name: string, callback: function }} Page
  */
-
 export default class HeaderView extends View {
-    constructor() {
+    /**
+     * @param {import('../main/main-view').default} mainComponent
+     */
+    constructor(mainComponent) {
         /**
-         * @param {import('../../../view').ViewParams}
+         * @type {import('../view').ViewParams}
          */
         const params = {
             tag: 'header',
             classNames: [CssClasses.HEADER],
         };
         super(params);
+        this.headerLinkElements = [];
+        this.configureView(mainComponent);
     }
 
     /**
      * @param {import('../main/main-view').default} mainComponent
      */
-
-    configureViwe(mainComponent) {
+    configureView(mainComponent) {
+        /**
+         * @type {import('../../util/element-creator').ElementParams}
+         */
+        const navParams = {
+            tag: 'nav',
+            classNames: [CssClasses.NAV],
+            textContent: '',
+            callback: null,
+        };
         /**
          * @type {import('../../util/element-creator').ElementParams}
          */
         const titleParams = {
             tag: 'h1',
             classNames: [CssClasses.TITLE],
-            textContent: 'ПЕРЕКРЕСТОК',
+            textContent: 'ПЕРЕКРЁСТОК',
             callback: null,
         };
-        const navParams = {
-            tag: 'nav',
-            classNames: [CssClasses.NAV],
-            callback: null,
-        };
+
         const creatorNav = new ElementCreator(navParams);
-        const creatorTitle = new ElementCreator(titleParams);
-        this.viewElementCreator.addInnerElement(creatorTitle);
         this.viewElementCreator.addInnerElement(creatorNav);
 
-        // const pages = this.getPages(mainComponent);
+        const creatorTitle = new ElementCreator(titleParams);
+        this.viewElementCreator.addInnerElement(creatorTitle);
 
-        // pages.forEach((page, index) => {
-        //     const linkElement = new LinkView(page, this.headerLinkElements);
 
-        //     creatorNav.addInnerElement(linkElement.getHtmlElement());
-        //     if (index === START_PAGE_INDEX) {
-        //         page.callback();
-        //         linkElement.setSelectedStatus();
-        //     }
+        const pages = this.getPages(mainComponent);
 
-        //     this.headerLinkElements.push(linkElement);
-        // });
+        pages.forEach((page, index) => {
+            const linkElement = new LinkView(page, this.headerLinkElements);
+            creatorNav.addInnerElement(linkElement.getHtmlElement());
+            
+            if (index === START_PAGE_INDEX) {
+                page.callback();
+                linkElement.setSelectedStatus();
+            }
+
+            this.headerLinkElements.push(linkElement);
+        });
 
         this.viewElementCreator.addInnerElement(creatorNav);
     }
-    // /**
-    //  * @param {import('../main/main-view').default} mainComponent
-    //  * @returns {Array<Page>}
-    //  */
-    // getPages(mainComponent) {
-    //     const about = new About;
-    // }
+
+    /**
+     * @param {import('../main/main-view').default} mainComponent
+     * @returns {Array<Page>}
+     */
+    getPages(mainComponent) {
+        const aboutView = new AboutView();
+        const videoView = new VideoView();
+
+        const pages = [
+            {
+                name: NamePages.ABOUT,
+                callback: () => mainComponent.setContent(aboutView),
+            },
+            {
+                name: NamePages.VIDEOS,
+                callback: () => mainComponent.setContent(videoView),
+            },
+            {
+                name: NamePages.SONGS,
+            },
+            {
+                name: NamePages.ALBUMS,
+            },
+            {
+                name: NamePages.NEWS,
+            },
+        ];
+
+        return pages;
+    }
 }
