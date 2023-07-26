@@ -20,16 +20,16 @@ export default class CardDetailView extends CardView {
         /**
          * @type {import('../../../../util/element-creator').ElementParams}
          */
-        let labelParams = {
+        let windowParams = {
             tag: 'div',
             classNames: [CssClasses.FIELD],
             textContent: '',
             callback: null,
         };
-        let creatorLabel = new ElementCreator(labelParams);
-        this.viewElementCreator.addInnerElement(creatorLabel);
+        let creatorWindow = new ElementCreator(windowParams);
+        this.viewElementCreator.addInnerElement(creatorWindow);
 
-        creatorLabel.element.innerHTML = `<iframe src="${this.card.youtubeUrl}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+        creatorWindow.element.innerHTML = `<iframe src="${this.card.youtubeUrl}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
 
         const buttonParams = {
             tag: 'button',
