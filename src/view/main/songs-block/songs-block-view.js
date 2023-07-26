@@ -1,5 +1,5 @@
 import View from '../../view';
-import SongTextView from './song-text-window/song-text';
+import SongTextView from './song-text-window/song-text-window';
 import './songs-block.css';
 import SongView from './songs/songs-list-view';
 import songsInfo from '../../../data/songs/songs-list';
@@ -55,12 +55,13 @@ export default class SongsBlock extends View {
         });
         this.viewElementCreator.element.firstChild.innerHTML = '<p>НАЗВАНИЕ</p><p>АЛЬБОМ / ДАТА РЕЛИЗА</p>';
         this.viewElementCreator.element.firstChild.classList.add('list-header');
+        this.viewElementCreator.element.firstChild.classList.remove('song');
     }
 
     showSongText(song) {
         this.clearView();
         const songText = this.createSongTextToView(song);
-        this.viewElementCreator.addInnerElement(songText.getHtmlElement());
+        this.viewElementCreator.addInnerElement(songText.getHtmlElement());  
     }
 
     clearView() {
