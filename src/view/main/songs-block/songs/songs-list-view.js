@@ -24,7 +24,7 @@ export default class SongView extends View {
         super(params);
 
         this.song = song;
-        this.callback;
+        this.callback = this.clickHandler();
         this.configureView();
     }
 
@@ -54,18 +54,18 @@ export default class SongView extends View {
         this.viewElementCreator.addInnerElement(creatorAlbum);
     }
 
-    /**
-     * @param {function} callback
-     */
-    setCallback(callback) {
-        if (typeof callback === 'function') {
-            this.callback = callback;
-        }
-    }
+    // /**
+    //  * @param {function} callback
+    //  */
+    // setCallback(callback) {
+    //     if (typeof callback === 'function' && this.viewElementCreator.element.className !== 'list-header') {
+    //         this.callback = callback;
+    //     }
+    // }
 
-    clickHandler() {
-        this.callback();
-    }
+    // clickHandler() {
+    //     this.callback();
+    // }
 
     getSongInfo() {
         return this.song;
