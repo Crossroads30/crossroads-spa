@@ -13,7 +13,7 @@ export default class FooterView extends View {
          * @type {import('../view').ViewParams}
          */
         const params = {
-            tag: 'section',
+            tag: 'footer',
             classNames: [CssClasses.FOOTER],
         };
         super(params);
