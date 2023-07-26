@@ -8,7 +8,7 @@ const CssClasses = {
     VIDEOS_BLOCK: 'videos-block',
 };
 
-export default class ProductView extends View {
+export default class VideosBlock extends View {
     constructor() {
         /**
          * @type {import('../../view').ViewParams}
@@ -16,6 +16,7 @@ export default class ProductView extends View {
         const params = {
             tag: 'section',
             classNames: [CssClasses.VIDEOS_BLOCK],
+            callback: Function,
         };
         super(params);
 
