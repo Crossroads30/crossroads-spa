@@ -18,6 +18,7 @@ export default class LinkView extends View {
         const params = {
             tag: 'a',
             classNames: [CssClasses.ITEM],
+            callback: Function,
         };
         super(params);
 

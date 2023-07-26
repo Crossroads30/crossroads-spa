@@ -14,6 +14,7 @@ export default class ElementCreator {
     constructor(params) {
         this.element = null;
         this.createElement(params);
+        this.setCallback();
     }
 
     /**

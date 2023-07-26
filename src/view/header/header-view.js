@@ -4,7 +4,7 @@ import VideoView from '../main/videos-block/videos-view';
 import ElementCreator from '../../util/element-creator';
 import LinkView from './link-view/link-view';
 import AboutView from '../main/about-block/about-view';
-import Songs from '../main/songs-block/songs-view';
+import Songs from '../main/songs-block/songs-block-view';
 
 const CssClasses = {
     HEADER: 'header',
@@ -35,6 +35,7 @@ export default class HeaderView extends View {
         const params = {
             tag: 'header',
             classNames: [CssClasses.HEADER],
+            callback: Function,
         };
         super(params);
         this.headerLinkElements = [];

@@ -12,8 +12,10 @@ export default class MainView extends View {
         const params = {
             tag: 'main',
             classNames: [CssClasses.MAIN],
+            callback: Function,
         };
         super(params);
+        this.callback = params.callback;
     }
 
     /**

@@ -20,10 +20,11 @@ export default class CardView extends View {
         const params = {
             tag: 'a',
             classNames: [CssClasses.CONTAINER],
+            callback: Function,
         };
         super(params);
 
-        this.callback = null;
+        this.callback;
         this.card = card;
 
         this.configureView();
