@@ -94,19 +94,19 @@ export default class HeaderView extends View {
      * @returns {Array<Page>}
      */
     getPages(mainComponent) {
-        const aboutView = new AboutView();
-        const videoView = new VideoView();
+        // const aboutView = new AboutView();
+        // const videoView = new VideoView();
         const songViwe = new Songs();
 
         const pages = [
-            {
-                name: NamePages.ABOUT,
-                callback: () => mainComponent.setContent(aboutView),
-            },
-            {
-                name: NamePages.VIDEOS,
-                callback: () => mainComponent.setContent(videoView),
-            },
+            // {
+            //     name: NamePages.ABOUT,
+            //     callback: () => mainComponent.setContent(aboutView),
+            // },
+            // {
+            //     name: NamePages.VIDEOS,
+            //     callback: () => mainComponent.setContent(videoView),
+            // },
             {
                 name: NamePages.SONGS,
                 callback: () => mainComponent.setContent(songViwe),
