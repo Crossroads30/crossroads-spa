@@ -1,0 +1,33 @@
+.songs-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    height: 100vh;
+    width: 100%;
+
+    padding: 50px;
+
+    background-image: url(../../../data/backgrounds/songs-bgr.png);
+    background-size: 100% 100%;
+    color: #fff;
+}
+
+
+
+.list-header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-header::after {
+    position: absolute;
+    left: 0%;
+    bottom: -10%;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background:  #fff;
+}
