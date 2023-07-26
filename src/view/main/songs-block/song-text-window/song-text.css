@@ -1,3 +1,34 @@
 .song__full::after {
     height: 0
 }
+
+.text__conteiner {
+    align-self: center;
+    overflow: scroll;
+}
+
+.text__conteiner::-webkit-scrollbar {
+    display: none;
+   }
+
+.text__field {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text__title {
+    position: relative;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text__title::after {
+    position: absolute;
+    left: 0%;
+    bottom: -10%;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background:  #fff;
+}
