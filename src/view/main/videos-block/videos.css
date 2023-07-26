@@ -11,8 +11,6 @@
 
     padding: 10px;
 
-    overflow-y: scroll;
-
-    background-image: url(../../../data/backgrounds/songs-bgr.png);
+    background-image: url(../../../data/backgrounds/videos-bgr.png);
     background-size: 100% 100%;
 }
