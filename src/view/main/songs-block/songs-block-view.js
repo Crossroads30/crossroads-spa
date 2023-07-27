@@ -17,10 +17,9 @@ export default class SongsBlock extends View {
         const params = {
             tag: 'ul',
             classNames: [CssClasses.CONTEINER],
-            callback: Function,
+            // callback: Function,
         };
         super(params);
-
         this.showAllSongs();
     }
 

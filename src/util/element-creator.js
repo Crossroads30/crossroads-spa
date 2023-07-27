@@ -14,7 +14,7 @@ export default class ElementCreator {
     constructor(params) {
         this.element = null;
         this.createElement(params);
-        this.setCallback();
+        // this.setCallback();
     }
 
     /**
@@ -64,7 +64,6 @@ export default class ElementCreator {
      */
     setCallback(callback) {
         if (typeof callback === 'function') {
-            this.element.addEventListener('click', (event) => callback(event));
-        }
+            this.element.addEventListener('click', (event) => callback(event));        }
     }
 }

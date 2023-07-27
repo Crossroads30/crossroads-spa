@@ -8,14 +8,14 @@ import ElementCreator from '../util/element-creator';
  * @typedef {{
  * tag: string,
  * classNames: Array<string>,
- * callback: Function,
+ * //callback: Function,
  * }} ViewParams
  */
 export default class View {
     /**
      * @param {ViewParams} params
      */
-    constructor(params = { tag: 'section', classNames: [], callback: Function }) {
+    constructor(params = { tag: 'section', classNames: [], /*callback: Function*/ }) {
         this.viewElementCreator = this.createView(params);
 
         this.callback = params.callback;
@@ -40,23 +40,24 @@ export default class View {
             tag: params.tag,
             classNames: params.classNames,
             textContent: '',
-            callback: this.clickHandler.bind(this),
+            // callback: this.clickHandler.bind(this),
+            callback: params.callback,
         };
         this.viewElementCreator = new ElementCreator(elementParams);
 
         return this.viewElementCreator;
     }
 
-    /**
-     * @param {function} callback
-     */
-    setCallback(callback) {
-        if (typeof callback === 'function') {
-            this.callback = callback;
-        }
-    }
+    // /**
+    //  * @param {function} callback
+    //  */
+    // setCallback(callback) {
+    //     if (typeof callback === 'function') {
+    //         this.callback = callback;
+    //     }
+    // }
 
-    clickHandler() {
-        this.callback();
-    }
+    // clickHandler() {
+    //     this.callback();
+    // }
 }

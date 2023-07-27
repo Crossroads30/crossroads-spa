@@ -16,8 +16,9 @@ export default class SongTextView extends SongView {
      */
     configureView() {
         this.viewElementCreator.setCssClasses([CssClasses.CONTAINER]);
-        this.viewElementCreator.element.classList.remove('song')
-
+        this.viewElementCreator.element.classList.remove('song');
+        this.callback = null;
+        
         /**
          * @type {import('../../../../util/element-creator').ElementParams}
          */
