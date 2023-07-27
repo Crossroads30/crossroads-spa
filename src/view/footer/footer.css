@@ -21,14 +21,13 @@
 .footer p {
     color: #a49e9e;
     font-family: Fenix;
-    font-size: 18px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     letter-spacing: 4.5px;
 
     text-decoration: none;
-    cursor: pointer;
 }
 
 .youtube {
@@ -36,4 +35,5 @@
     height: 50px;
     background-image: url(../../data/youtube-icon/icons8-youtube-48.png);
     margin-left: 10px;
+    cursor: pointer;
 }
