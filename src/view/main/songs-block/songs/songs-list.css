@@ -5,6 +5,8 @@
     justify-content: space-between;
     align-content: center;
     padding-top: 20px;
+    text-shadow: 2px 2px 2px #000000;
+    font-size: 20px;
 }
 
 .song::after {
@@ -17,12 +19,18 @@
     background:  #fff;
 }
 
+.song:hover {
+    color: #02f98e;
+    text-shadow: 2px 2px 2px #216b06;
+}
+
 .list-header {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
     pointer-events: none;
+    text-shadow: 2px 2px 2px #000000;
 }
 
 .list-header::after {
@@ -37,4 +45,11 @@
 
 .song, .song p {
     cursor: pointer;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center
 }
