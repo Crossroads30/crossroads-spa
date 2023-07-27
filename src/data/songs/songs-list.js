@@ -12,7 +12,7 @@ const songsView = [
     },
     {
         id: '1',
-        name: 'Наконец-то Рождество',
+        name: 'Наконец-то Рождество!',
         album: 'Перекрёсток',
         release: '20/12/2021', 
         text: song_text[0].text,       
