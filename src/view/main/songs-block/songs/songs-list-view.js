@@ -6,6 +6,7 @@ const CssClasses = {
     CONTAINER: 'song',
     TITLE: 'song__info',
     ALBUM: 'song__album',
+    WRAPPER: 'wrapper',
 };
 
 export default class SongView extends View {
@@ -19,12 +20,11 @@ export default class SongView extends View {
         const params = {
             tag: 'li',
             classNames: [CssClasses.CONTAINER],
-            callback: Function,
+            // callback: Function,
         };
         super(params);
 
         this.song = song;
-        this.callback = this.clickHandler();
         this.configureView();
     }
 
@@ -32,14 +32,26 @@ export default class SongView extends View {
         /**
          * @type {import('../../../../util/element-creator').ElementParams}
          */
+        const wrapperParams = {
+            tag: 'div',
+            classNames: [CssClasses.WRAPPER],
+            textContent: '',
+            callback: this.clickHandler.bind(this),
+        }
+        const wrapperCreator = new ElementCreator(wrapperParams);
+        this.viewElementCreator.addInnerElement(wrapperCreator);
+        
+
         const titleParams = {
             tag: 'p',
             classNames: [CssClasses.TITLE],
             textContent: this.song.name,
-            callback: this.clickHandler.bind(this),
+            callback: null //this.clickHandler.bind(this),
         };
         const creatorTitle = new ElementCreator(titleParams);
-        this.viewElementCreator.addInnerElement(creatorTitle);
+        // this.viewElementCreator.addInnerElement(creatorTitle);
+
+        wrapperCreator.element.append(creatorTitle.element)
 
         /**
          * @type {import('../../../../util/element-creator').ElementParams}
@@ -48,24 +60,26 @@ export default class SongView extends View {
             tag: 'p',
             classNames: [CssClasses.ALBUM],
             textContent: this.song.album + ' / ' + this.song.release,
-            callback: this.clickHandler.bind(this),
+            callback: null//this.clickHandler.bind(this),
         };
         const creatorAlbum = new ElementCreator(album_releaseParams);
-        this.viewElementCreator.addInnerElement(creatorAlbum);
+        // this.viewElementCreator.addInnerElement(creatorAlbum);
+
+        wrapperCreator.element.append(creatorAlbum.element)
     }
 
-    // /**
-    //  * @param {function} callback
-    //  */
-    // setCallback(callback) {
-    //     if (typeof callback === 'function' && this.viewElementCreator.element.className !== 'list-header') {
-    //         this.callback = callback;
-    //     }
-    // }
+    /**
+     * @param {function} callback
+     */
+    setCallback(callback) {
+        if (typeof callback === 'function' && this.viewElementCreator.element.className !== 'list-header') {
+            this.callback = callback;
+        }
+    }
 
-    // clickHandler() {
-    //     this.callback();
-    // }
+    clickHandler() {
+        this.callback();
+    }
 
     getSongInfo() {
         return this.song;
