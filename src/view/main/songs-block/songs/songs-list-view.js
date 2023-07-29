@@ -37,21 +37,20 @@ export default class SongView extends View {
             classNames: [CssClasses.WRAPPER],
             textContent: '',
             callback: this.clickHandler.bind(this),
-        }
+        };
         const wrapperCreator = new ElementCreator(wrapperParams);
         this.viewElementCreator.addInnerElement(wrapperCreator);
-        
 
         const titleParams = {
             tag: 'p',
             classNames: [CssClasses.TITLE],
             textContent: this.song.name,
-            callback: null //this.clickHandler.bind(this),
+            callback: null, //this.clickHandler.bind(this),
         };
         const creatorTitle = new ElementCreator(titleParams);
         // this.viewElementCreator.addInnerElement(creatorTitle);
 
-        wrapperCreator.element.append(creatorTitle.element)
+        wrapperCreator.element.append(creatorTitle.element);
 
         /**
          * @type {import('../../../../util/element-creator').ElementParams}
@@ -60,12 +59,12 @@ export default class SongView extends View {
             tag: 'p',
             classNames: [CssClasses.ALBUM],
             textContent: this.song.album + ' / ' + this.song.release,
-            callback: null//this.clickHandler.bind(this),
+            callback: null, //this.clickHandler.bind(this),
         };
         const creatorAlbum = new ElementCreator(album_releaseParams);
         // this.viewElementCreator.addInnerElement(creatorAlbum);
 
-        wrapperCreator.element.append(creatorAlbum.element)
+        wrapperCreator.element.append(creatorAlbum.element);
     }
 
     /**
