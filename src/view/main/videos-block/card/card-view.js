@@ -20,7 +20,7 @@ export default class CardView extends View {
         const params = {
             tag: 'a',
             classNames: [CssClasses.CONTAINER],
-            callback: Function,
+            // callback: Function,
         };
         super(params);
 
@@ -43,7 +43,7 @@ export default class CardView extends View {
         const creatorSongLink = new ElementCreator(imgParams);
         this.viewElementCreator.addInnerElement(creatorSongLink);
         creatorSongLink.element.setAttribute('src', `${this.card.url}`);
-        
+
         /**
          * @type {import('../../../../util/element-creator').ElementParams}
          */

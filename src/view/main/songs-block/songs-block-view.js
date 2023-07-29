@@ -60,7 +60,7 @@ export default class SongsBlock extends View {
     showSongText(song) {
         this.clearView();
         const songText = this.createSongTextToView(song);
-        this.viewElementCreator.addInnerElement(songText.getHtmlElement());  
+        this.viewElementCreator.addInnerElement(songText.getHtmlElement());
     }
 
     clearView() {

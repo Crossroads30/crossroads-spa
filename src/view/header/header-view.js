@@ -35,7 +35,7 @@ export default class HeaderView extends View {
         const params = {
             tag: 'header',
             classNames: [CssClasses.HEADER],
-            callback: Function,
+            // callback: Function,
         };
         super(params);
         this.headerLinkElements = [];
@@ -94,19 +94,19 @@ export default class HeaderView extends View {
      * @returns {Array<Page>}
      */
     getPages(mainComponent) {
-        // const aboutView = new AboutView();
-        // const videoView = new VideoView();
+        const aboutView = new AboutView();
+        const videoView = new VideoView();
         const songViwe = new Songs();
 
         const pages = [
-            // {
-            //     name: NamePages.ABOUT,
-            //     callback: () => mainComponent.setContent(aboutView),
-            // },
-            // {
-            //     name: NamePages.VIDEOS,
-            //     callback: () => mainComponent.setContent(videoView),
-            // },
+            {
+                name: NamePages.ABOUT,
+                callback: () => mainComponent.setContent(aboutView),
+            },
+            {
+                name: NamePages.VIDEOS,
+                callback: () => mainComponent.setContent(videoView),
+            },
             {
                 name: NamePages.SONGS,
                 callback: () => mainComponent.setContent(songViwe),

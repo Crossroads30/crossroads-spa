@@ -16,7 +16,7 @@ export default class VideosBlock extends View {
         const params = {
             tag: 'section',
             classNames: [CssClasses.VIDEOS_BLOCK],
-            callback: Function,
+            // callback: Function,
         };
         super(params);
 
