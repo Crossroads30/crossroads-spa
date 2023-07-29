@@ -1,10 +1,17 @@
 .nav-item {
     text-decoration: none;
+    color: #000;
+    padding: 0 0 0 4px;
+    text-align: center;
+    border: #fff 2px solid;
 }
 
 .nav-item:hover {
     cursor: pointer;
+   border-bottom: #DB3939 2px solid;
 }
 
 .nav-item__selected {
-color: #DB3939;}
+color: #DB3939;
+pointer-events: none;
+}
