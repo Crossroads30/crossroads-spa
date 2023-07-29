@@ -4,6 +4,9 @@
 
 .text__conteiner {
     align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .text__conteiner::-webkit-scrollbar {
@@ -38,3 +41,39 @@
     content: "";
     background:  #fff;
 }
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+   
+    background: url("../../../../data/icons/player-icon/play.svg");
+    background-size: cover;
+    border: 0;
+    padding: 0;
+
+    margin-bottom: 20px;
+
+}
+
+.play-btn:hover {
+    background: url("../../../../data/icons/player-icon/play_green.svg");
+    background-size: cover;
+}
+
+.pause-btn {
+    width: 40px;
+    height: 40px;
+
+    background: url("../../../../data/icons/player-icon/pause.svg");
+    background-size: cover;
+    border: 0;
+    padding: 0;
+
+    margin-bottom: 20px;
+}
+
+.pause-btn:hover {
+    background: url("../../../../data/icons/player-icon/pause_green.svg");
+    background-size: cover;
+}
+
