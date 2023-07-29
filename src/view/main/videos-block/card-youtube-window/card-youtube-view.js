@@ -6,7 +6,7 @@ const CssClasses = {
     CONTAINER: 'card',
     CONTAINER_FULL: 'card__full',
     FIELD: 'card__field',
-    BUTTON: 'back__button',
+    BUTTON: 'back-btn',
 };
 const CARD_TEXT_BACK = 'Назад...';
 
