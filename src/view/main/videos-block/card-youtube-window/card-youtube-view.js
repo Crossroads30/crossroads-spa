@@ -1,6 +1,6 @@
 import ElementCreator from '../../../../util/element-creator';
 import CardView from '../card/card-view';
-import './card-youtube.css'
+import './card-youtube.css';
 
 const CssClasses = {
     CONTAINER: 'card',
@@ -29,7 +29,7 @@ export default class CardDetailView extends CardView {
         let creatorWindow = new ElementCreator(windowParams);
         this.viewElementCreator.addInnerElement(creatorWindow);
 
-        creatorWindow.element.innerHTML = `<iframe src="${this.card.youtubeUrl}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+        creatorWindow.element.innerHTML = `<iframe src="${this.card.youtubeUrl}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
 
         const buttonParams = {
             tag: 'button',
@@ -40,6 +40,4 @@ export default class CardDetailView extends CardView {
         const creatorButton = new ElementCreator(buttonParams);
         this.viewElementCreator.addInnerElement(creatorButton);
     }
-
-    
 }
