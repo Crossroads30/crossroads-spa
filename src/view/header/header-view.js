@@ -5,6 +5,8 @@ import ElementCreator from '../../util/element-creator';
 import LinkView from './link-view/link-view';
 import AboutView from '../main/about-block/about-view';
 import Songs from '../main/songs-block/songs-block-view';
+import AlbomView from '../main/albums-block/album-view';
+import NewsView from '../main/news-block/news-view';
 
 const CssClasses = {
     HEADER: 'header',
@@ -97,6 +99,9 @@ export default class HeaderView extends View {
         const aboutView = new AboutView();
         const videoView = new VideoView();
         const songViwe = new Songs();
+        const albumView = new AlbomView();
+        const newsView = new NewsView();
+        
 
         const pages = [
             {
@@ -113,9 +118,11 @@ export default class HeaderView extends View {
             },
             {
                 name: NamePages.ALBUMS,
+                callback: () => mainComponent.setContent(albumView),
             },
             {
                 name: NamePages.NEWS,
+                callback: () => mainComponent.setContent(newsView),
             },
         ];
 
