@@ -3,6 +3,7 @@
 }
 
 .text__conteiner {
+    font-family: 'Unbounded';
     align-self: center;
     display: flex;
     flex-direction: column;
@@ -15,7 +16,8 @@
 
 .text__field {
     width: 400px;
-    font-size: 20px;
+    line-height: 26px;
+    font-size: 16px;
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 2px 2px 2px #000000;
