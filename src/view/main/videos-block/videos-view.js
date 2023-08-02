@@ -40,8 +40,8 @@ export default class VideosBlock extends View {
      */
     createLargeCardToView(card) {
         const largeCardComponent = new CardDetailView(card);
-        const callbackToProduct = () => this.showAllCard();
-        largeCardComponent.setCallback(callbackToProduct);
+        const callbackToVideo = () => this.showAllCard();
+        largeCardComponent.setCallback(callbackToVideo);
         return largeCardComponent;
     }
 
@@ -50,6 +50,7 @@ export default class VideosBlock extends View {
         cardsInfo.forEach((card) => {
             const smallCardComponent = this.createSmallCardsToView(card);
             this.viewElementCreator.addInnerElement(smallCardComponent.getHtmlElement());
+            this.viewElementCreator.element.classList.remove('youtube-window');
         });
     }
 
@@ -57,6 +58,8 @@ export default class VideosBlock extends View {
         this.clearView();
         const largeCard = this.createLargeCardToView(card);
         this.viewElementCreator.addInnerElement(largeCard.getHtmlElement());
+        this.viewElementCreator.element.classList.add('youtube-window');
+        largeCard.viewElementCreator.element.classList.remove('card');   
     }
 
     clearView() {
