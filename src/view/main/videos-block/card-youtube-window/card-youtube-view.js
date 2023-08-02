@@ -4,8 +4,8 @@ import './card-youtube.css';
 
 const CssClasses = {
     CONTAINER: 'card',
-    CONTAINER_FULL: 'card__full',
-    FIELD: 'card__field',
+    CONTAINER_FULL: 'card__video-conteiner',
+    FIELD: 'video__field',
     BUTTON: 'back-btn',
 };
 const CARD_TEXT_BACK = 'Назад...';
