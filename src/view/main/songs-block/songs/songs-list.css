@@ -1,4 +1,5 @@
 .song {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: relative;
     width: 100%;
     display: flex;
@@ -20,8 +21,8 @@
 }
 
 .song:hover {
-    color: #02f98e;
-    text-shadow: 2px 2px 2px #216b06;
+    color: #acf5df;
+    text-shadow: 2px 2px 2px #000000;
 }
 
 .list-header {
