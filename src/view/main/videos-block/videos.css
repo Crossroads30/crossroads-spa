@@ -1,17 +1,22 @@
 .videos-block {
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
     justify-content:space-evenly;
     flex-wrap: wrap;
     gap: 2%;
     
     width: 100%;
-    /* height: 100vh; */
 
-    padding: 50px 50px 0;
+    padding: 100px 300px 0;
 
     background-image: url(../../../data/backgrounds/videos-bgr.png);
     background-size: 100% 100%;
-    /* overflow: scroll; */
+}
+
+.youtube-window {
+    height: 100vh;
+    align-items: center;
+    padding: 0 80px;
+    align-items: center;
+    justify-content:center;
 }
